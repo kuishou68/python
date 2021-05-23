@@ -8,9 +8,9 @@ with open('qq_word.txt', encoding='utf-8')as f:
     wl=" ".join(wordlist)
 
 # 个性化词云图
-# mk=imread("wujioaxing.png")
-# wc=WordCloud(font_path='simhei.ttf',background_color='white',mask=mk).generate(wl)
+mk=imread("wujioaxing.png") # 自定义导入背景图
+wc=WordCloud(font_path='simhei.ttf',background_color='white',mask=mk).generate(wl)
 
 # 默认输出一个长宽2000的词云图
-wc=WordCloud(font_path='simhei.ttf',background_color='white',height=2000,width=2000).generate(wl)
+# wc=WordCloud(font_path='simhei.ttf',background_color='white',height=2000,width=2000).generate(wl)
 wc.to_file('111.jpg')

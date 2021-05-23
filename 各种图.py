@@ -98,8 +98,6 @@ def paintBar():
             .add_yaxis("每年发表说说总数", data[1])
             .render("每年发表说说总数柱状图.html")
     )
-
-
 paintBar()
 
 # 统计点赞和评论折线图
@@ -117,8 +115,6 @@ def paintLine():
             .add_yaxis("每年点赞数", y_axis=thumbValue)
             .render("每年点赞和评论折现图.html")  # 输出图形
     )
-
-
 paintLine()
 
 

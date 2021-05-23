@@ -106,7 +106,6 @@ while True:
             # 打包好每一行的数据，放进excel中
             sht.range('A' + str(indexD)).value = [qq_time, qq_content, qq_praise, qq_comment]
 
-
         # 当已经到了尾页，“下一页”这个按钮就没有id了，可以结束了
         if driver.page_source.find('pager_next_' + str(next_num)) == -1:
             break
