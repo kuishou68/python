@@ -116,5 +116,3 @@ def paintLine():
             .render("每年点赞和评论折现图.html")  # 输出图形
     )
 paintLine()
-
-

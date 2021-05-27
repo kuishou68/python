@@ -1,19 +1,16 @@
 import time
 import urllib
-from xml import etree
-import csv
-import re
-import numpy as np
+
 from selenium import webdriver
 from lxml import etree
 import xlwings as xw
 # 这里一定要设置编码格式，防止后面写入文件时报错
 
-friend = ''  # 朋友的QQ号，朋友的空间要求允许你能访问
-user = ''  # 你的QQ号
-pw = ''  # 你的QQ密码
+friend = '1569339843'  # 朋友的QQ号，朋友的空间要求允许你能访问
+user = '783533896'  # 你的QQ号
+pw = '1323mkoNJI.@'  # 你的QQ密码
 
-# 获取浏览器驱动·
+# 获取浏览器驱动
 chrome_driver = 'chromedriver.exe'
 driver = webdriver.Chrome(executable_path=chrome_driver)
 
@@ -31,7 +28,7 @@ def ParseCookiestr(cookie_str):
         cookielist.append(cookie)
     return cookielist
 
-
+# 进入QQ空间
 def loginByPwd (driver, user, pw):
     # 浏览器地址定向为qq登陆页面
     driver.get("http://i.qq.com")
@@ -67,6 +64,7 @@ title = ['时间', '内容', '赞', '评论']
 sht.range('A1').value = title
 indexD = 1
 
+# 开始爬取
 while True:
         # 下拉滚动条，使浏览器加载出动态加载的内容，
         # 我这里是从1开始到6结束 分5 次加载完每页数据
@@ -86,7 +84,6 @@ while True:
         print(divs)
         # 这里使用 a 表示内容可以连续不清空写入
         # with open('qq_excel.txt', 'a', encoding="utf-8") as f:
-
 
         for index, div in enumerate(divs):
             qq_name = div.xpath('./div[2]/a/text()')
@@ -119,3 +116,5 @@ while True:
         # 因为在下一个循环里首先还要把页面下拉，所以要跳到外层的frame上
         driver.switch_to.parent_frame()
 
+# 关闭浏览器
+driver.quit()
