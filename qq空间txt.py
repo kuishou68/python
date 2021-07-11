@@ -4,9 +4,9 @@ from lxml import etree
 
 # 这里一定要设置编码格式，防止后面写入文件时报错
 
-friend = '1569339843'  # 朋友的QQ号，朋友的空间要求允许你能访问
-user = '783533896'  # 你的QQ号
-pw = '1323mkoNJI.@'  # 你的QQ密码
+friend = ''  # 朋友的QQ号，朋友的空间要求允许你能访问
+user = ''  # 你的QQ号
+pw = ''  # 你的QQ密码
 
 # 获取浏览器驱动
 chrome_driver = 'chromedriver.exe'
